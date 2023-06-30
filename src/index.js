@@ -1,17 +1,19 @@
+// when we import from react, it allows us to use "JSX" syntax
 import React from 'react';
+// ReactDOM renders our whole app onto the page
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//  App is a component that we made up
+
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
+// Entry point
+// The webpack configuration of react is using src/index.js as its entry point
+//  this is telling reactDOM where
+// we want to render our whole application
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Actually rendering our application
+root.render(
+  <App/>
+);
