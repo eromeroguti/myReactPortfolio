@@ -1,13 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import myImage from "./images/IMG_3328.jpg";
 import { Navbar, Aboutme, Footer, Portfolio, Contact } from "./components";
 
 const App = () => {
   return (
     <body>
+      <Router>
       <div className="App">
         <Navbar>
-          <Aboutme />
+          <Routes>
+            <Route path="/about" element={<Aboutme />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         </Navbar>
         <div
           className="App"
@@ -28,6 +34,7 @@ const App = () => {
       <div className="container" style={{ background: "black" }}>
         <Footer />
       </div>
+      </Router>
     </body>
   );
 };
